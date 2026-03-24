@@ -1,0 +1,53 @@
+[*]
+[*] GTKWave Analyzer v3.3.103 (w)1999-2019 BSI
+[*] Wed Dec 27 15:43:06 2023
+[*]
+[dumpfile] "/mnt/disk2/tjnagler/proj/axg/repos/gpu-math/func-approx/coding-exercise/verilator/dump.vcd"
+[dumpfile_mtime] "Wed Dec 27 15:42:33 2023"
+[dumpfile_size] 14426
+[savefile] "/mnt/disk2/tjnagler/proj/axg/repos/gpu-math/func-approx/coding-exercise/verilator/waves.gtkw"
+[timestart] 16730
+[size] 1465 600
+[pos] -1 -1
+*-11.978342 32600 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] quadra_top.
+[sst_width] 214
+[signals_width] 248
+[sst_expanded] 1
+[sst_vpaned_height] 152
+@28
+quadra_top.clk
+quadra_top.rst_b
+quadra_top.x_dv
+@22
+quadra_top.x[23:0]
+@28
+[color] 5
+quadra_top.dv_p0
+@22
+quadra_top.x_p0[23:0]
+quadra_top.x1_p0[6:0]
+quadra_top.x2_p0[16:0]
+quadra_top.sq_p0[23:0]
+quadra_top.a_p0[23:0]
+quadra_top.b_p0[19:0]
+quadra_top.c_p0[15:0]
+@28
+[color] 5
+quadra_top.dv_p1
+@22
+quadra_top.sq_p1[23:0]
+quadra_top.a_p1[23:0]
+quadra_top.b_p1[19:0]
+quadra_top.c_p1[15:0]
+@28
+[color] 5
+quadra_top.dv_p2
+@23
+quadra_top.y_p2[23:0]
+@28
+quadra_top.y_dv
+@22
+quadra_top.y[23:0]
+[pattern_trace] 1
+[pattern_trace] 0
