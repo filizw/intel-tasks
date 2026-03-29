@@ -26,8 +26,14 @@ module quadra_top
 
     // <challenge!>
 
+    quadra quadra_0 (
+        .clk(clk),
+        .rst_b(rst_b),
+        .x(x),
+        .y(y)
+    );
+
     // Outputs:
     always_comb y_dv = dv_p2;
-    always_comb y    = '0;
 
 endmodule

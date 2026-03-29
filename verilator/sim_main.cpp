@@ -200,11 +200,16 @@ void testQuadra
     using namespace std;
 
     // Test params:
-//  uint32_t x_start = 0x000000; // 0.0
+    //uint32_t x_start = 0x000000; // 0.0
     uint32_t x_start = 0xfffff0;
     uint32_t x_stop  = 0xffffff; // 1.999...
+    //uint32_t x_stop  = 0x0000ff;
     uint32_t x_step  = 0x000001; // exhaustive test
-//  uint32_t x_step  = 0x000001; // sparse test
+    //uint32_t x_step  = 0x010101; // sparse test
+
+    // Throw two dummy values into the FIFO to represent the first two cycles of latency, where the output is not valid:
+    lat_fifo.push_back(0);
+    lat_fifo.push_back(0);
 
     // Main simulation loop:
     for (uint32_t x = x_start; x <= x_stop; x += x_step)

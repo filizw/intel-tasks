@@ -27,6 +27,7 @@ bool testFunction (const double & x_dbl)
     }
 
     // Approximation:
+//#define DOUBLE_OVERRIDE
 #ifdef DOUBLE_OVERRIDE
     y_fxd_t y_fxd = approxDouble (x_fxd); // use this to override fixed point with doubles
 #else
@@ -63,9 +64,10 @@ bool testFunction (void)
 
     // Test params:
     uint32_t m_start = 0x000000; // 0.0
+    //uint32_t m_start = 0xfffff0;
     uint32_t m_stop  = 0xffffff; // 1.999...
     uint32_t m_step  = 0x000101; // sparse test
-//  uint32_t m_step  = 0x000001; // exhaustive test
+    //uint32_t m_step  = 0x000001; // exhaustive test
 
     // Initialize test status:
     bool ok_sts = true;
@@ -79,6 +81,9 @@ bool testFunction (void)
         //             ---------------------
 
         ok_sts &= in_spec;
+
+        // Skip the rest if one test fails:
+        if (!ok_sts) break;
     }
 
     return ok_sts;

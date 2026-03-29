@@ -11,7 +11,7 @@ a =    sin((2*x)-(pi/4));  # f(x)/0!
 b =  2*cos((2*x)-(pi/4));  # f'(x)/1!
 c = -2*sin((2*x)-(pi/4));  # f''(x)/2!
 
-en_plot = 1; # set to 1 to enable plotting
+en_plot = 0; # set to 1 to enable plotting
 
 # Plot the coefficients:
 if (en_plot)

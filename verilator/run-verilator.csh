@@ -2,7 +2,7 @@
 
 rm -rf run-verilator.log
 
-set TOP_DIR = ${HOME}/prj/coding-exercise2s
+set TOP_DIR = ${HOME}/proj/intel-tasks
 set ACT_DIR = ${TOP_DIR}/libs/ac_types/include
 set CPP_DIR = ${TOP_DIR}/c++-model
 set RTL_DIR = ${TOP_DIR}/rtl-model
@@ -41,7 +41,7 @@ verilator \
     --timescale 1ps/1ps \
     --timescale-override 1ps/1ps \
     --top-module ${top_module} \
-    --clk screuclk \
+#   --clk screuclk \
     \
     +define+NOFLOPDELAY=1 \
     \
@@ -52,7 +52,10 @@ verilator \
     ${RTL_DIR}/quadra_top.vs \
     ${RTL_DIR}/square.vs \
     ${RTL_DIR}/lut.vs \
-    ${RTL_DIR}/quadra.vs
+    ${RTL_DIR}/quadra.vs \
+    ${RTL_DIR}/mult1.vs \
+    ${RTL_DIR}/mult2.vs \
+    ${RTL_DIR}/adder.vs
 
 echo "--------------------------------------------------------------------------------"
 echo "... done with 'verilator'."
