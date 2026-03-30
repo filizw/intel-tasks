@@ -7,16 +7,11 @@ module adder
     input  t2_t t2,
     output s_t  s
 );
-    s_t t0_aligned, t1_aligned, t2_aligned;
-
+    // Compute t0 + t1 + t2:
     always_comb begin
-        // Align input numbers to (s2.27), take X1 and X2 alignment into consideration:
-        t0_aligned = t0 <<< 4;  // (s1.23) to (s2.27)
-        t1_aligned = t1 >>> 12; // (s3.39) to (s2.27)
-        t2_aligned = t2 >>> 30; // (s2.57) to (s2.27)
-
-        // Compute t0 + t1 + t2:
-        s = t0_aligned + t1_aligned + t2_aligned;
+        // First align all numbers to the number with the longest fractional part, which is T2
+        // Then perform addition and align the result to the (s2.27) format
+        s = ((t0 <<< (T2_F - T0_F)) + (t1 <<< (T2_F - T1_F)) + t2) >>> (T2_F - S_F);
     end
 
 endmodule

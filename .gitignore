@@ -1,5 +1,9 @@
 octave-workspace
+coeffs.txt
+hex_coeffs.txt
 err.dat
 Quadra.o
+QuadraTb.o
+QuadraTb
 obj_dir
 dump.vcd

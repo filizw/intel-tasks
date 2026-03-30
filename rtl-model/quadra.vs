@@ -93,12 +93,25 @@ module quadra
         .s(s)
     );
 
+
+    logic lsb, guard, round, sticky, round_up;
+
+    // Calculate round_up bit to perform round to the nearest even:
+    always_comb begin
+        lsb    = s[4];
+        guard  = s[3];
+        round  = s[2];
+        sticky = |s[1:0];
+
+        round_up = guard & (round | sticky | lsb);
+    end
+
     always_ff @(posedge clk)
     if (!rst_b) begin
         y_reg <= '0;
     end else begin
         // Convert from (s2.27) to (s.2.23) and apply rounding:
-         y_reg <= ((s + (s_t'(1) <<< 3)) >>> 4);
+        y_reg <= (s >>> 4) + round_up;
     end
 
     always_comb y = y_reg;

@@ -37,7 +37,7 @@ endif
 # Disable all cout by default:
 DBG_ALL = 0
 DBG_OUT = 0
-DBG_TST = 1
+DBG_TST = 0
 
 ifeq ($(DBG_ALL),1)
 DBG_OUT = 1

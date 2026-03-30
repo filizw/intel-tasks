@@ -7,6 +7,7 @@ module mult1
     output t1_t t1
 );
     // Compute b * x2:
-    always_comb t1 = b * x2;
+    // Extend X2 and convert it to the same format as B
+    always_comb t1 = (b * $signed({1'b0, x2})) >>> 6;
 
 endmodule
